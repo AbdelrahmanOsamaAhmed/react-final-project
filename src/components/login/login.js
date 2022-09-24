@@ -1,9 +1,43 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
+import NavLink from "../link/NavLink";
+import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import login from "../../store/action";
 
 export default function LogIn() {
+  let [email, setEmail] = useState();
+  let [password, setPassword] = useState();
+  const dispatch = useDispatch();
+  let userData = useSelector((state) => state.user);
+  //let [condition, setCondition] = useState(false);
+  let condition = useSelector((state) => state.status);
+
+  const handleLogin = () => {
+    setEmail(document.getElementById("email").value);
+    setPassword(document.getElementById("password").value);
+  };
+
+  useEffect(() => {
+    axios
+      .get(`https://dummyjson.com/users/filter?key=email&value=${email}`)
+      .then((user) => {
+        console.log(user);
+        if (user.data.users[0].password === password) {
+          dispatch(login(user.data.users[0]));
+          console.log(userData);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [email, password]);
+
   return (
     <>
+      {condition && <Link to="/signup">OK</Link>}
       <section class="h-screen">
         <div class="px-6 h-full text-gray-800">
           <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -81,7 +115,7 @@ export default function LogIn() {
                   <input
                     type="text"
                     class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="email"
                     placeholder="Email address"
                   />
                 </div>
@@ -90,7 +124,7 @@ export default function LogIn() {
                   <input
                     type="password"
                     class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="password"
                     placeholder="Password"
                   />
                 </div>
@@ -116,19 +150,16 @@ export default function LogIn() {
 
                 <div class="text-center lg:text-left">
                   <button
+                    onClick={handleLogin}
                     type="button"
                     class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Login
                   </button>
+
                   <p class="text-sm font-semibold mt-2 pt-1 mb-0">
                     Don't have an account?
-                    <a
-                      href="#!"
-                      class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                    >
-                      Register
-                    </a>
+                    <NavLink data="/signup" content="Register" />
                   </p>
                 </div>
               </form>
