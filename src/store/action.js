@@ -4,3 +4,17 @@ export default function login(user) {
     payload: user,
   };
 }
+
+export function signup(user) {
+    return {
+      type: "SIGN_UP",
+      payload: user,
+    };
+}
+
+export function logout(user) {
+    return {
+      type: "LOG_OUT",
+      payload: user,
+    };
+}

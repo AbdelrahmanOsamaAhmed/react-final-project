@@ -12,7 +12,6 @@ export default function LogIn() {
   let [password, setPassword] = useState();
   const dispatch = useDispatch();
   let userData = useSelector((state) => state.user);
-  //let [condition, setCondition] = useState(false);
   let condition = useSelector((state) => state.status);
 
   const handleLogin = () => {
@@ -27,7 +26,7 @@ export default function LogIn() {
         console.log(user);
         if (user.data.users[0].password === password) {
           dispatch(login(user.data.users[0]));
-          console.log(userData);
+          //console.log(userData);
         }
       })
       .catch((err) => {
