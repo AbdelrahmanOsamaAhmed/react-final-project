@@ -8,7 +8,9 @@ import Ticker, { FinancialTicker, NewsTicker } from 'nice-react-ticker';
 import MovingComponent from 'react-moving-text';
 import SendIcon from '@mui/icons-material/Send';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-function VideoFooter({ url, likes, shares, channel, avatarSrc, song }) {
+import ShareIcon from '@mui/icons-material/Share';
+function VideoFooter({ url, likes, shares,comments, channel, avatarSrc, song }) {
+
 
     return (
         <div className="Video_footer">
@@ -18,8 +20,8 @@ function VideoFooter({ url, likes, shares, channel, avatarSrc, song }) {
                 </h4>
             </div>
 
-           <div className="video_footer_ticker">
-                
+            <div className="video_footer_ticker">
+
                 <span className="">
 
                     <MovingComponent
@@ -30,31 +32,36 @@ function VideoFooter({ url, likes, shares, channel, avatarSrc, song }) {
                         timing="ease-in-out"
                         iteration="infinite"
                         fillMode="both">
-                     <MusicNoteIcon className="video_footer_icon" />
+                        <MusicNoteIcon className="video_footer_icon" />
                         {song}
                     </MovingComponent></span>
 
             </div>
 
             <div className="video_footer_actions">
-            <div className="video_footer_actionsLeft">
-                <FavoriteIcon />
-                <ModeCommentIcon />
-                <SendIcon />
-                <MoreHorizIcon />
+                <div className="video_footer_actionsLeft">
+                    <FavoriteIcon />
+                    <ModeCommentIcon />
+                    <SendIcon />
+                    <MoreHorizIcon />
                 </div>
                 <div className="video_footer_actionsRight">
                     <div className="video_footer_stat">
-                        <FavoriteIcon/>
+                        <FavoriteIcon />
                         <p>{likes}</p>
                     </div>
 
                     <div className="video_footer_stat">
-                        <ModeCommentIcon/>
+                        <ModeCommentIcon />
+                        <p>{comments}</p>
+                    </div>
+
+                    <div className="video_footer_stat">
+                        <ShareIcon />
                         <p>{shares}</p>
                     </div>
-                
-            </div>
+
+                </div>
             </div>
         </div>
     )
