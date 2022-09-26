@@ -16,8 +16,8 @@ function App() {
     <Router>
       <SidePanel/>
       <Route path="/login" exact component={LogIn} />
-      <Route path="/connections" exact component={Connections} />
       <Route path="/signup" exact component={SignUp} />
+      <Route path="/connections" exact component={Connections} />
       <Route path="/reels" exact component={Reels} />
     </Router>
   </>

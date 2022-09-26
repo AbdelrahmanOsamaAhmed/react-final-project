@@ -36,7 +36,7 @@ export default function LogIn() {
 
   return (
     <>
-      {condition && <Link to="/signup">OK</Link>}
+      
       <section class="h-screen">
         <div class="px-6 h-full text-gray-800">
           <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -155,6 +155,8 @@ export default function LogIn() {
                   >
                     Login
                   </button>
+                  {condition && <Link to="/connections">Go To Connections</Link>}
+                  
 
                   <p class="text-sm font-semibold mt-2 pt-1 mb-0">
                     Don't have an account?
