@@ -31,6 +31,7 @@ export default function Reducer(state = initialState, action) {
         state.connections.push(action.payload);
       }
       return state;
+      
     default:
       return state;
   }

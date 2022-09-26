@@ -25,7 +25,7 @@ const SidePanel = () => {
       </header>
       <ul className="d-flex-column justify-content-end p-0 ">
         <li>
-          <Link to={"/connections"}>
+          <Link to={"/connections"} style={{ textDecoration: "none" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -44,7 +44,7 @@ const SidePanel = () => {
           </Link>
         </li>
         <li>
-          <Link to={"/reels"}>
+          <Link to={"/reels"} style={{ textDecoration: "none" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -78,7 +78,7 @@ const SidePanel = () => {
           </a>
         </li>
         <li>
-        <Link to={"/login"}>
+          <Link to={"/login"} style={{ textDecoration: "none" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -97,9 +97,10 @@ const SidePanel = () => {
               />
             </svg>
             <span className="linkText">Log out</span>
-            </Link>
+          </Link>
         </li>
       </ul>
+      
     </div>
   );
 };
