@@ -4,19 +4,33 @@ import Reels from "./components/Reels/Reels";
 import Connections from "./components/connection/Connections";
 import store from "./store/store";
 import { Provider } from 'react-redux';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import LogIn from "./components/login/login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SignUp from "./components/signup/signup";
 
 function App() {
   return (
-    <div className="App">
+    <>
+    <Router>
       <SidePanel/>
-      <Reels/>
-      <Connections />
-    </div>
+      <Route path="/login" exact component={LogIn} />
+      <Route path="/connections" exact component={Connections} />
+      <Route path="/signup" exact component={SignUp} />
+      <Route path="/reels" exact component={Reels} />
+    </Router>
+  </>
   )
 
 
 
 /* function App() {
+  return (
+    
+
+
+function App() {
   return (
     
   );
