@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch,useSelector } from 'react-redux'
-import { addtoconnect } from "../Store/Action";
+import { addtoconnect } from "../../store/action";
 export default function Connections(){
 
     let [Connectionslist,setConnectionslist]=useState([])
