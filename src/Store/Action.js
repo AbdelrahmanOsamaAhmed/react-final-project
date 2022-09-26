@@ -6,21 +6,21 @@ export default function login(user) {
 }
 
 export function signup(user) {
-    return {
-      type: "SIGN_UP",
-      payload: user,
-    };
+  return {
+    type: "SIGN_UP",
+    payload: user,
+  };
 }
 
 export function logout(user) {
-    return {
-      type: "LOG_OUT",
-      payload: user,
-    };
+  return {
+    type: "LOG_OUT",
+    payload: user,
+  };
 }
 export function addtoconnect(user) {
-      return {
-        type: "CONNECT",
-        payload: user,
-      };
+  return {
+    type: "CONNECT",
+    payload: user,
+  };
 }

@@ -1,7 +1,7 @@
 let initialState = {
   user: {},
   status: false,
-  connections:[]
+  connections: [],
 };
 
 export default function Reducer(state = initialState, action) {
@@ -23,12 +23,14 @@ export default function Reducer(state = initialState, action) {
         user: {},
         status: false,
       };
-      case "CONNECT":
-        let isconn=state.connections.findIndex((con)=>con.id==action.payload.id)
-        if(isconn==-1){
-        state.connections.push(action.payload)
-        }
-        return state
+    case "CONNECT":
+      let isconn = state.connections.findIndex(
+        (con) => con.id == action.payload.id
+      );
+      if (isconn == -1) {
+        state.connections.push(action.payload);
+      }
+      return state;
     default:
       return state;
   }
