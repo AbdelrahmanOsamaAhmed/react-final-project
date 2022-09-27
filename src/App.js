@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./components/signup/signup";
 import ViewProfile from "./components/viewprofile/viewprofile";
 import About from "./components/about/about";
+import Home from "./components/home/home";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/reels" exact component={Reels} />
           <Route path="/profile" exact component={ViewProfile} />
           <Route path="/about" exact component={About} />
+          <Route path="/" exact component={Home} />
         </div>
       </Router>
     </>

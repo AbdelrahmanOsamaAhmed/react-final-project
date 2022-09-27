@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
 import NavLink from "../link/NavLink";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -12,7 +12,8 @@ export default function LogIn() {
   let [password, setPassword] = useState();
   const dispatch = useDispatch();
   let userData = useSelector((state) => state.user);
-  let condition = useSelector((state) => state.status);
+  //let condition = useSelector((state) => state.status);
+  let history = useHistory()
 
   const handleLogin = () => {
     setEmail(document.getElementById("email").value);
@@ -26,6 +27,7 @@ export default function LogIn() {
         console.log(user);
         if (user.data.users[0].password === password) {
           dispatch(login(user.data.users[0]));
+          history.push('/connections')
           //console.log(userData);
         }
       })
@@ -155,7 +157,7 @@ export default function LogIn() {
                   >
                     Login
                   </button>
-                  {condition && <Link to="/connections">Go To Connections</Link>}
+                  {/* {condition && <Link to="/connections">Go To Connections</Link>} */}
                   
 
                   <p class="text-sm font-semibold mt-2 pt-1 mb-0">
