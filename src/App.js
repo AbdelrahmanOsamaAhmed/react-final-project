@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LogIn from "./components/login/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./components/signup/signup";
+import ViewProfile from "./components/viewprofile/viewprofile";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/signup" exact component={SignUp} />
       <Route path="/connections" exact component={Connections} />
       <Route path="/reels" exact component={Reels} />
+      <Route path="/profile" exact component={ViewProfile} />
     </Router>
   </>
   )

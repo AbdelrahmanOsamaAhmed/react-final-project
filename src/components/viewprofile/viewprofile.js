@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import About from '../About/about';
+import About from '../about/about';
+import Reels from '../Reels/Reels';
 
 
 
@@ -36,15 +37,15 @@ export default function ViewProfile() {
                     <a className="nav-link" href="#">My Posts</a>
                   </li>
                   <li className="nav-item pl-5">
-                    <a className="nav-link" href="#">My Reels</a>
+                    <a className="nav-link" href="/reels">My Reels</a>
                   </li>
                 </ul>
                 <div className="m-3 bg-light p-4 border-top">
                   <Route path='/about' component={About}></Route>
-                  {/*
-                  <Route path='/posts' component={Posts}></Route>
-                  <Route path='/Reels' component={Reels}></Route>
-                  */}
+                  
+                  {/* <Route path='/posts' component={Posts}></Route> */}
+                  <Route path='/reels' component={Reels}></Route>
+                 
                 </div>
               </Router>  
             </div>
