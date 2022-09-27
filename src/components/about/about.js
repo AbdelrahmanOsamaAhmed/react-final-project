@@ -1,14 +1,16 @@
-import './about.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'react-bootstrap/Image';
-import ListGroup from 'react-bootstrap/ListGroup';
+import "./about.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Image from "react-bootstrap/Image";
+import ListGroup from "react-bootstrap/ListGroup";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ViewProfile from '../viewprofile/viewprofile';
+import ViewProfile from "../viewprofile/viewprofile";
 import React, { useEffect, useState } from "react";
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
 export default function About() {
-    let userr = useSelector(state=>state.user)/* {"id":1,"firstName":"Terry","lastName":"Medhurst","maidenName":"Smitham","age":50,"gender":"male","email":"atuny0@sohu.com",
+  let userr = useSelector(
+    (state) => state.user
+  ); /* {"id":1,"firstName":"Terry","lastName":"Medhurst","maidenName":"Smitham","age":50,"gender":"male","email":"atuny0@sohu.com",
   "phone":"+63 791 675 8914","username":"atuny0","password":"9uQFF1Lh","birthDate":"2000-12-25",
   "image":"https://robohash.org/hicveldicta.png","bloodGroup":"A−","height":189,"weight":75.4,"eyeColor":"Green","hair":{"color":"Black","type":"Strands"}
   ,"domain":"slashdot.org","ip":"117.29.86.254","address":{"address":"1745 T Street Southeast","city":"Washington",
@@ -21,45 +23,60 @@ export default function About() {
 } */
   //let userr = useSelector((state) => state.user);
 
-
-    return (
-         <>
+  return (
+    <>
+      {useSelector((state) => state.status) && (
         <div>
-            <p className='text-left p-3'>
-                <span className='h5'>Email: &emsp; </span>
-                <span id='info' className='bg-white border shadow-sm rounded'>{userr.email}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Email: &emsp; </span>
+            <span id="info" className="bg-white border shadow-sm rounded">
+              {userr.email}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Username: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.username}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Username: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.username}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Phone Number: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.phone}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Phone Number: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.phone}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Birthdate: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.birthDate}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Birthdate: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.birthDate}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Address: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.address.address}, {userr.address.city}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Address: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.address.address}, {userr.address.city}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Education: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.company.department} at {userr.university}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Education: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.company.department} at {userr.university}
+            </span>
+          </p>
 
-            <p className='text-left p-3'>
-                <span className='h5'>Work: &emsp; </span>
-                <span id='info' className='bg-white rounded border shadow-sm'>{userr.company.title} at {userr.company.name}</span>
-            </p>
+          <p className="text-left p-3">
+            <span className="h5">Work: &emsp; </span>
+            <span id="info" className="bg-white rounded border shadow-sm">
+              {userr.company.title} at {userr.company.name}
+            </span>
+          </p>
         </div>
-        </> 
-    );
+      )}
+    </>
+  );
 }

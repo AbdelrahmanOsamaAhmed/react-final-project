@@ -12,10 +12,9 @@ export function signup(user) {
   };
 }
 
-export function logout(user) {
+export function logout() {
   return {
     type: "LOG_OUT",
-    payload: user,
   };
 }
 export function addtoconnect(user) {

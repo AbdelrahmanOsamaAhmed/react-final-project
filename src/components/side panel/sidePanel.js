@@ -1,8 +1,14 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./sidepanel.css";
+import { logout } from "../../store/action";
 const SidePanel = () => {
   const toggler = () => {
     document.querySelector(".sidepanel").classList.toggle("active");
+  };
+  let dispatch = useDispatch();
+  let logOutFunction = () => {
+    dispatch(logout());
   };
   return (
     <div className="sidepanel active border border-dark vh-100 d-flex-column justify-content-center align-items-center">
@@ -78,7 +84,11 @@ const SidePanel = () => {
           </Link>
         </li>
         <li>
-          <Link to={"/login"} style={{ textDecoration: "none" }}>
+          <Link
+            to={"/login"}
+            style={{ textDecoration: "none" }}
+            onClick={() => dispatch(logout())}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"

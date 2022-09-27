@@ -20,6 +20,8 @@ export default function Reducer(state = initialState, action) {
       };
     case "LOG_OUT":
       return {
+        ...state,
+        connections:[],
         user: {},
         status: false,
       };
