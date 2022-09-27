@@ -2,7 +2,7 @@ import "./viewprofile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "../about/about";
 import Reels from "../Reels/Reels";
 import React, { useEffect, useState } from "react";
@@ -81,9 +81,10 @@ export default function ViewProfile() {
           {/* <Router> */}
             <ul className="nav h4 justify-content-center ">
               <li className="nav-item">
-                <a className="nav-link" href="/about">
+                {/* <a className="nav-link" href="/about">
                   About
-                </a>
+                </a> */}
+                <Link to={'/about'}>About</Link>
               </li>
               <li className="nav-item pl-5">
                 <a className="nav-link" href="#">

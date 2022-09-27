@@ -25,7 +25,7 @@ export default function Connections(){
         <div className="row d-flex justify-content-center">
             {Connectionslist.map((conn)=>{
                 return(
-                    <div class="card text-bg-dark col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-8 m-2 ">
+                    <div key={conn.id} class="card text-bg-dark col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-8 m-2 ">
                     {<button id={`${conn.id}`} className="position-absolute bg-transparent  border-0 end-0 m-2" style={{width:'fit-content'}} onClick={()=>{
                         connect(conn) ; 
                         let newconn=Connectionslist.filter((i)=>{
