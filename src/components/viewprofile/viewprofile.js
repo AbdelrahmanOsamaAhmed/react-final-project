@@ -1,12 +1,7 @@
 import "./viewprofile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image from "react-bootstrap/Image";
-import ListGroup from "react-bootstrap/ListGroup";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "../about/about";
-import Reels from "../Reels/Reels";
-import React, { useEffect, useState } from "react";
-import { useDispatch,useSelector } from 'react-redux'
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ViewProfile() {
   let userr = {
@@ -62,29 +57,35 @@ export default function ViewProfile() {
     userAgent:
       "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/12.0.702.0 Safari/534.24",
   };
-  console.log(useSelector(state=>state.user))
+  console.log(useSelector((state) => state.user));
 
   return (
     <>
-      <div id="div1" className="container-fluid bg-secondary shadow-sm ">
-        <img
-          id="profile"
-          className="rounded-circle bg-light"
-          src={userr.image}
-        ></img>
-        <p className="display-6 pb-3">
-          {userr.firstName} {userr.maidenName} {userr.lastName}
-        </p>
-      </div>
-      <div id="div2" className="container shadow">
-        <div className="p-3 m-3">
-          {/* <Router> */}
+      <div className="w-full">
+        <div
+          id="div1"
+          className="container-fluid bg-secondary shadow-sm d-flex flex-col align-items-center"
+        >
+          <img
+            id="profile"
+            className="rounded-circle bg-light"
+            src={userr.image}
+          ></img>
+          <p className="display-6 pb-3">
+            {userr.firstName} {userr.maidenName} {userr.lastName}
+          </p>
+        </div>
+        <div className="container shadow">
+          <div className="p-3 m-3">
+            {/* <Router> */}
             <ul className="nav h4 justify-content-center ">
               <li className="nav-item">
                 {/* <a className="nav-link" href="/about">
                   About
                 </a> */}
-                <Link to={'/about'}>About</Link>
+                <Link className="nav-link" to={"/about"}>
+                  About
+                </Link>
               </li>
               <li className="nav-item pl-5">
                 <a className="nav-link" href="#">
@@ -103,9 +104,10 @@ export default function ViewProfile() {
 
 
               {/* <Route path='/posts' component={Posts}></Route> */}
-              {/* <Route path="/reels" component={Reels}></Route> */} 
+              {/* <Route path="/reels" component={Reels}></Route> */}
             </div>
-          {/* </Router> */}
+            {/* </Router> */}
+          </div>
         </div>
       </div>
     </>
