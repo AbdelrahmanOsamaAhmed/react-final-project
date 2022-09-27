@@ -4,7 +4,8 @@ import Image from 'react-bootstrap/Image';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ViewProfile from '../viewprofile/viewprofile';
-
+import React, { useEffect, useState } from "react";
+import { useDispatch,useSelector } from 'react-redux'
 
 export default function About() {
     let userr = {"id":1,"firstName":"Terry","lastName":"Medhurst","maidenName":"Smitham","age":50,"gender":"male","email":"atuny0@sohu.com",
@@ -16,10 +17,14 @@ export default function About() {
   "currency":"Peso","iban":"NO17 0695 2754 967"},"company":{"address":{"address":"629 Debbie Drive","city":"Nashville",
   "coordinates":{"lat":36.208114,"lng":-86.58621199999999},"postalCode":"37076","state":"TN"},
   "department":"Marketing","name":"Blanda-O'Keefe","title":"Help Desk Operator"},"ein":"20-9487066","ssn":"661-64-2976",
-  "userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/12.0.702.0 Safari/534.24"}
-  
+  "userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/12.0.702.0 Safari/534.24"
+}
+  //let userr = useSelector((state) => state.user);
+  console.log(useSelector(state=>state.user))
+
+
     return (
-        <>
+        {/* <>
         <div>
             <p className='text-left p-3'>
                 <span className='h5'>Email: &emsp; </span>
@@ -56,6 +61,6 @@ export default function About() {
                 <span id='info' className='bg-white rounded border shadow-sm'>{userr.company.title} at {userr.company.name}</span>
             </p>
         </div>
-        </>
+        </> */}
     );
 }

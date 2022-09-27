@@ -10,6 +10,7 @@ import LogIn from "./components/login/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./components/signup/signup";
 import ViewProfile from "./components/viewprofile/viewprofile";
+import About from "./components/about/about";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/connections" exact component={Connections} />
       <Route path="/reels" exact component={Reels} />
       <Route path="/profile" exact component={ViewProfile} />
+      <Route path="/about" exact component={About} />
     </Router>
   </>
   )

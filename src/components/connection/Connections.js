@@ -18,6 +18,7 @@ export default function Connections(){
         dispatch(addtoconnect(user));
         console.log(storeconnectionlist);
     }
+    console.log(useSelector(state=>state.user))
     return(
         <>
         <h1>CONN</h1>
