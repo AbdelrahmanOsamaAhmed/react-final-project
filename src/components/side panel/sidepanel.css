@@ -3,7 +3,7 @@ ul {
   height: 85%;
 }
 
-ul li a svg{
+ul li a svg {
   padding: 10px;
 }
 
@@ -14,15 +14,14 @@ ul li {
   transition: all 0.3s ease;
 }
 
-ul li:last-child{
+ul li:last-child {
   outline: 3px solid red;
 }
 
-ul li:hover{
+ul li:hover {
   background-color: black;
   color: white;
   transition: all 0.3s ease;
-
 }
 
 ul li a span {
