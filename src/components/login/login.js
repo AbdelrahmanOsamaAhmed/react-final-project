@@ -2,18 +2,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
 import NavLink from "../link/NavLink";
 import { Link, useHistory } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import login from "../../store/action";
 
 export default function LogIn() {
+  const firstUpdate = useRef(true);
   let [email, setEmail] = useState();
   let [password, setPassword] = useState();
+  let [match, setMatch] = useState(true);
   const dispatch = useDispatch();
   let userData = useSelector((state) => state.user);
   //let condition = useSelector((state) => state.status);
-  let history = useHistory()
+  let history = useHistory();
 
   const handleLogin = () => {
     setEmail(document.getElementById("email").value);
@@ -21,14 +23,23 @@ export default function LogIn() {
   };
 
   useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
     axios
       .get(`https://dummyjson.com/users/filter?key=email&value=${email}`)
       .then((user) => {
         console.log(user);
-        if (user.data.users[0].password === password) {
-          dispatch(login(user.data.users[0]));
-          history.push('/connections')
-          //console.log(userData);
+        if (user.data.users.length !== 0) {
+          if (user.data.users[0].password === password) {
+            dispatch(login(user.data.users[0]));
+            setMatch(true);
+            history.push("/connections");
+            //console.log(userData);
+          }
+        } else {
+          setMatch(false);
         }
       })
       .catch((err) => {
@@ -38,31 +49,30 @@ export default function LogIn() {
 
   return (
     <>
-      
-      <section class="h-screen">
-        <div class="px-6 h-full text-gray-800">
-          <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-            <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
+      <section className="h-screen">
+        <div className="px-6 h-full text-gray-800">
+          <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
+            <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                class="w-full"
+                className="w-full"
                 alt="Sample image"
               />
             </div>
-            <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+            <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form>
-                <div class="flex flex-row items-center justify-center lg:justify-start">
-                  <p class="text-lg mb-0 mr-4">Sign in with</p>
+                <div className="flex flex-row items-center justify-center lg:justify-start">
+                  <p className="text-lg mb-0 mr-4">Sign in with</p>
                   <button
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
-                    class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 320 512"
-                      class="w-4 h-4"
+                      className="w-4 h-4"
                     >
                       <path
                         fill="currentColor"
@@ -75,12 +85,12 @@ export default function LogIn() {
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
-                    class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
-                      class="w-4 h-4"
+                      className="w-4 h-4"
                     >
                       <path
                         fill="currentColor"
@@ -93,12 +103,12 @@ export default function LogIn() {
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
-                    class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
-                      class="w-4 h-4"
+                      className="w-4 h-4"
                     >
                       <path
                         fill="currentColor"
@@ -108,14 +118,14 @@ export default function LogIn() {
                   </button>
                 </div>
 
-                <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-                  <p class="text-center font-semibold mx-4 mb-0">Or</p>
+                <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+                  <p className="text-center font-semibold mx-4 mb-0">Or</p>
                 </div>
 
-                <div class="mb-6">
+                <div className="mb-6">
                   <input
                     type="text"
-                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="email"
                     placeholder="Email address"
                   />
@@ -124,43 +134,48 @@ export default function LogIn() {
                 <div class="mb-6">
                   <input
                     type="password"
-                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="password"
                     placeholder="Password"
                   />
                 </div>
 
-                <div class="flex justify-between items-center mb-6">
-                  <div class="form-group form-check">
+                {!match && (
+                  <div className="text-red-500 text-center">
+                    WRONG EMAIL OR PASSWORD
+                  </div>
+                )}
+
+                <div className="flex justify-between items-center mb-6">
+                  <div className="form-group form-check">
                     <input
                       type="checkbox"
-                      class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                       id="exampleCheck2"
                     />
                     <label
-                      class="form-check-label inline-block text-gray-800"
+                      className="form-check-label inline-block text-gray-800"
                       for="exampleCheck2"
                     >
                       Remember me
                     </label>
                   </div>
-                  <a href="#!" class="text-gray-800">
+                  <a href="#!" className="text-gray-800">
                     Forgot password?
                   </a>
                 </div>
 
-                <div class="text-center lg:text-left">
+                <div className="text-center lg:text-left">
                   <button
                     onClick={handleLogin}
                     type="button"
-                    class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Login
                   </button>
                   {/* {condition && <Link to="/connections">Go To Connections</Link>} */}
-                  
 
-                  <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                  <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                     Don't have an account?
                     <NavLink data="/signup" content="Register" />
                   </p>
