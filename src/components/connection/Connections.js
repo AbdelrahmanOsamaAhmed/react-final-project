@@ -21,7 +21,7 @@ export default function Connections() {
   };
   console.log(useSelector((state) => state));
   return (
-    <>
+    <div>
       <h1>CONN</h1>
       <div className="row d-flex justify-content-center">
         {Connectionslist.map((conn) => {
@@ -109,6 +109,6 @@ export default function Connections() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
