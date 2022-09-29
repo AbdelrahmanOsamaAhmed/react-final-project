@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./sidepanel.css";
 import { logout } from "../../store/action";
+
 const SidePanel = () => {
   const toggler = () => {
     document.querySelector(".sidepanel").classList.toggle("active");
@@ -13,7 +14,7 @@ const SidePanel = () => {
   return (
     <>
       {useSelector((state) => state.status) && (
-        <div className="sidepanel active border border-dark vh-100 d-flex-column justify-content-center align-items-center">
+        <div className="sidepanel border border-dark vh-100 d-flex-column justify-content-center align-items-center">
           <header className="text-xl d-flex align-items-center justify-between px-3 mb-5">
             <span>sidebar</span>
             <svg
@@ -99,6 +100,32 @@ const SidePanel = () => {
                   />
                 </svg>{" "}
                 <span className="linkText">My Profile</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={"/singlePost"}
+                style={{ textDecoration: "none" }}
+                onClick={() => dispatch(logout())}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  fill="currentColor"
+                  className="bi bi-unindent"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M13 8a.5.5 0 0 0-.5-.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H12.5A.5.5 0 0 0 13 8Z"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    d="M3.5 4a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7a.5.5 0 0 0-.5-.5Z"
+                  />
+                </svg>
+                <span className="linkText">Single Post</span>
               </Link>
             </li>
             <li>

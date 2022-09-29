@@ -25,14 +25,13 @@ ul li:hover {
   transition: all 0.3s ease;
 }
 
-ul li a{
+ul li a {
   display: flex;
-  
+
   text-decoration: none;
   color: black;
-
 }
-ul li a:hover{
+ul li a:hover {
   color: white;
 }
 
@@ -81,6 +80,6 @@ header span {
 }
 
 .sidepanel.active {
-  width: 350px;
+  width: 250px;
   transition: all 0.5s ease;
 }
