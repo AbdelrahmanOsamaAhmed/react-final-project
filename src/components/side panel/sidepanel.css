@@ -15,7 +15,8 @@ ul li {
 }
 
 ul li:last-child {
-  outline: 3px solid red;
+  position: relative;
+  top: 50%;
 }
 
 ul li:hover {
@@ -24,11 +25,22 @@ ul li:hover {
   transition: all 0.3s ease;
 }
 
+ul li a{
+  display: flex;
+  
+  text-decoration: none;
+  color: black;
+
+}
+ul li a:hover{
+  color: white;
+}
+
 ul li a span {
-  margin-left: 30px;
   font-size: 20px;
   position: relative;
   left: 0;
+  top: 10px;
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -69,6 +81,6 @@ header span {
 }
 
 .sidepanel.active {
-  width: 250px;
+  width: 350px;
   transition: all 0.5s ease;
 }

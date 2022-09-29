@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-start">
           <SidePanel />
           <Route path="/login" exact component={LogIn} />
           <Route path="/signup" exact component={SignUp} />
