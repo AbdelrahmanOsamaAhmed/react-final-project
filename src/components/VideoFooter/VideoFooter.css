@@ -1,0 +1,50 @@
+
+.video_footer{position: relative;}
+.video_footer_text{
+    position: absolute;
+    bottom: 75px;
+    color: white;display: flex;align-items: center;
+   
+    margin-left: 20px;
+}
+
+.video_footer_text > h4{
+    margin-left: 10px;
+    
+}
+
+.video_footer_text > h4 > button{
+    color: white;font-weight: 900;text-transform: inherit;
+}
+
+
+
+.video_footer_ticker{
+    display: flex; 
+    width: 100%;margin-left: 30px;height: fit-content;
+    position: absolute;bottom:65px;color: white; margin:20 0px 40px;
+}
+
+.video_footer_ticker > span{
+    font-size: 18px;font-weight:500;
+}
+.video_footer_actions{
+    color: white;
+    position: absolute;bottom: 20px;width: 100%;
+}
+
+.video_footer_actionsLeft{
+   color: white;width: 40%;float: left;position: absolute;bottom: 5px;
+    font-size: 22px;margin-left: 25px;display: flex;color: white;justify-content: space-between;
+}
+
+.video_footer_actionsRight{
+    color: white;width: 15%;
+    font-size: 22px;color: white;font-size:18px ;
+    float: right;
+}
+
+.video_footer_stat{align-items: center;margin-right: 10px;margin-bottom:25px;}
+.video_footer_stat > p{
+    margin-left: 5px;margin-top: 1px;
+}
