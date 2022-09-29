@@ -14,7 +14,7 @@ const SidePanel = () => {
   return (
     <>
       {useSelector((state) => state.status) && (
-        <div className="sidepanel border border-dark vh-100 d-flex-column justify-content-center align-items-center">
+        <div className="sidepanel h-screen sticky top-0 border border-dark d-flex-column justify-content-center align-items-center">
           <header className="text-xl d-flex align-items-center justify-between px-3 mb-5">
             <span>sidebar</span>
             <svg
