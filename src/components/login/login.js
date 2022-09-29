@@ -36,7 +36,7 @@ export default function LogIn() {
             dispatch(login(user.data.users[0]));
             setMatch(true);
             history.push("/connections");
-            //console.log(userData);
+            console.log(userData);
           }
         } else {
           setMatch(false);
@@ -46,7 +46,7 @@ export default function LogIn() {
         console.log(err);
       });
   }, [email, password]);
-
+  
   return (
     <>
       <section className="h-screen">

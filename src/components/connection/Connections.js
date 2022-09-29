@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addtoconnect } from "../../store/action";
+
 export default function Connections() {
   let [Connectionslist, setConnectionslist] = useState([]);
   const [showButton, setShowButton] = useState(true);
+
   useEffect(() => {
     fetch("https://dummyjson.com/users")
       .then((res) => res.json())
@@ -12,11 +14,12 @@ export default function Connections() {
 
   let storeconnectionlist = useSelector((state) => state.connections);
   let dispatch = useDispatch();
+
   let connect = (user) => {
     dispatch(addtoconnect(user));
     console.log(storeconnectionlist);
   };
-  console.log(useSelector((state) => state.user));
+  console.log(useSelector((state) => state));
   return (
     <>
       <h1>CONN</h1>
