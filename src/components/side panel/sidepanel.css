@@ -3,7 +3,7 @@ ul {
   height: 85%;
 }
 
-ul li a svg{
+ul li a svg {
   padding: 10px;
 }
 
@@ -14,22 +14,33 @@ ul li {
   transition: all 0.3s ease;
 }
 
-ul li:last-child{
-  outline: 3px solid red;
+ul li:last-child {
+  position: relative;
+  top: 50%;
 }
 
-ul li:hover{
+ul li:hover {
   background-color: black;
   color: white;
   transition: all 0.3s ease;
+}
 
+ul li a{
+  display: flex;
+  
+  text-decoration: none;
+  color: black;
+
+}
+ul li a:hover{
+  color: white;
 }
 
 ul li a span {
-  margin-left: 30px;
   font-size: 20px;
   position: relative;
   left: 0;
+  top: 10px;
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -65,9 +76,11 @@ header span {
 .sidepanel {
   width: 65px;
   transition: all 0.5s ease;
+  z-index: 999 !important;
+  background-color: rgb(248, 255, 255);
 }
 
 .sidepanel.active {
-  width: 250px;
+  width: 350px;
   transition: all 0.5s ease;
 }

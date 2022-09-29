@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import News from './News/News';
+import React, { Component } from "react";
+import "./App.css";
+import News from "./News/News";
 import SidePanel from "./side panel/sidePanel";
 
 class App extends Component {
@@ -8,33 +8,29 @@ class App extends Component {
     super(props);
     this.state = {
       news1: {
-        type: 'top-headlines',
-        query: 'sources=techcrunch'
+        type: "top-headlines",
+        query: "sources=techcrunch",
       },
       news2: {
-        type: 'everything',
-        query: 'domains=techcrunch.com&language=en'
+        type: "everything",
+        query: "domains=techcrunch.com&language=en",
       },
       news3: {
-        type: 'top-headlines',
-        query: 'sources=bbc-news'
-      }
-    }
+        type: "top-headlines",
+        query: "sources=bbc-news",
+      },
+    };
   }
-
 
   render() {
     return (
       <div className="App">
         <SidePanel />
-        <div className="container">
-          <div className="col">
+        <div className="container-fluid">
+          <div className="row d-flex justify-content-center">
             <News news={this.state.news1} />
-            <News news={this.state.news2} />
-            <News news={this.state.news3} />
           </div>
         </div>
-
       </div>
     );
   }
