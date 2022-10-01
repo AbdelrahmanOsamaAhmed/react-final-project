@@ -10,8 +10,9 @@ import SignUp from "./components/signup/signup";
 import ViewProfile from "./components/viewprofile/viewprofile";
 import About from "./components/about/about";
 import Home from "./components/home/home";
-import News from "./components/News/News";
 import SinglePost from "./components/SinglePost/singlePost";
+import Posts from "./components/posts/Posts";
+// import postSingle from "./components/postSingle/PostSingle";
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
           <SidePanel />
           <Route path="/login" exact component={LogIn} />
           <Route path="/signup" exact component={SignUp} />
-          <Route path="/feed" exact component={News} />
-          <Route path="/singlePost" exact component={SinglePost} />
+          <Route path="/feed" exact component={Posts} />
+          <Route path="/singlePost/:id" exact component={SinglePost} />
+          {/* <Route path="/singlePost2/:id" exact component={postSingle} /> */}
           <Route path="/connections" exact component={Connections} />
           <Route path="/reels" exact component={Reels} />
           <Route path="/profile" exact component={ViewProfile} />

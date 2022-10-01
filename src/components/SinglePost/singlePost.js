@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import Comment from "./comment";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const SinglePost = () => {
-  //TODO: change later
-  const postId = 1;
+  const postId = useParams().id;
 
-  const user = useSelector((state) => state);
-  console.log(user);
-
+  const state = useSelector((state) => state.user);
   const [comments, setComments] = useState([{}]);
   const [post, setPost] = useState();
 
@@ -16,19 +14,20 @@ const SinglePost = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
+
+    const newComment = {
+      body: inputRef.current.value,
+      id: Math.random(),
+      postId,
+      user: {
+        id: state.id,
+        username: state.username,
+      },
+    };
+
+    console.log(newComment);
     if (inputRef.current.value.length === 0) return;
-    setComments([
-      ...comments,
-      //   {
-      //     body: inputRef.current.value,
-      //     id: Math.random(),
-      //     postId,
-      //     user: {
-      //       id: state.id,
-      //       username: state.username,
-      //     },
-      //   },
-    ]);
+    setComments([...comments, newComment]);
     inputRef.current.value = "";
   };
 
@@ -41,8 +40,6 @@ const SinglePost = () => {
       .then((res) => res.json())
       .then((data) => setComments(data.comments));
   }, []);
-
-  console.log(comments);
 
   if (!post) return <>loading...</>;
   return (

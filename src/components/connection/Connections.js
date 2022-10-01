@@ -28,7 +28,7 @@ export default function Connections() {
           return (
             <div
               key={conn.id}
-              class="card text-bg-dark col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-8 m-2 "
+              className="card text-bg-dark col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-8 m-2 "
             >
               {
                 <button
