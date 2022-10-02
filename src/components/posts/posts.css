@@ -1,204 +1,203 @@
 .x {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .post {
-    width: 100%;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 17px -8px rgba(0, 0, 0, 0.67);
-    box-shadow: 0px 0px 17px -8px rgba(0, 0, 0, 0.67);
-    margin: 30px 0;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 17px -8px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 0px 17px -8px rgba(0, 0, 0, 0.67);
+  margin: 30px 0;
 }
 
 .postWrapper {
-    padding: 10px;
+  padding: 10px;
 }
 
 .postTop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .postTopLeft {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .postProfileImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .postUsername {
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 10px;
 }
 
 .postLocation {
-    font-size: 12px;
-    font-weight: bold;
-    color: green;
+  font-size: 12px;
+  font-weight: bold;
+  color: green;
 }
 
 .postDate {
-    font-size: 12px;
-    margin-left: 10px;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
 .postCenter {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .postImg {
-    margin-top: 20px;
-    width: 100%;
-    max-height: 500px;
-    object-fit: contain;
+  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
 }
 
 .postBottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .postBottomLeft {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .likeIcon {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
-    cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 .postLikeCounter {
-    font-size: 15px;
-    font-weight: 400;
-    margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .postCommentText {
-    cursor: pointer;
-    border-bottom: 1px dashed gray;
+  cursor: pointer;
+  border-bottom: 1px dashed gray;
 }
 
 .postCommentCont {
-    margin-top: 5px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
+  margin-top: 5px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .postCommentCont-1 {
-    width: 90%;
+  width: 90%;
 }
 
 .postCommentsBox {
-    margin-top: 5px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
+  margin-top: 5px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .postCommentUser {
-    min-width: 20%;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
+  min-width: 20%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .postCommentContent {
-    margin-left: 8px;
-    font-size: 13px;
-    word-spacing: 2px;
-    font-weight: bold;
+  margin-left: 8px;
+  font-size: 13px;
+  word-spacing: 2px;
+  font-weight: bold;
 }
 
 .postCommentUserName {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .postCommentBtn {
-    background-color: #5699f0;
-    color: white;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
+  background-color: #5699f0;
+  color: white;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
+.btn1 {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn2 {
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn3 {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* Darker background on mouse-over */
 .btn:hover {
-    background-color: RoyalBlue;
+  background-color: RoyalBlue;
 }
 
-.container {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    text-align: center;
+.container1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  text-align: center;
 }
 
-button {
-    width: 90px;
-    height: 60px;
-    font-size: 30px;
-    background-color: green;
-    color: honeydew;
+.btnn {
+  width: 90px;
+  height: 60px;
+  font-size: 30px;
+  color: honeydew;
 }
 
 /*apply hover effect to button tag*/
 
-button:hover {
-    background-color: greenyellow;
-    color: grey;
+.btnn:hover {
+  background-color: greenyellow;
+  color: grey;
 }
 
 .btn2:hover {
-    background-color: RoyalBlue;
+  background-color: RoyalBlue;
 }
 
 .btn3:hover {
-    background-color: RoyalBlue;
+  background-color: RoyalBlue;
 }

@@ -12,6 +12,7 @@ import About from "./components/about/about";
 import Home from "./components/home/home";
 import SinglePost from "./components/SinglePost/singlePost";
 import Posts from "./components/posts/Posts";
+import MyConnections from "./components/myconnections/MyConnections";
 // import postSingle from "./components/postSingle/PostSingle";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/reels" exact component={Reels} />
           <Route path="/profile" exact component={ViewProfile} />
           <Route path="/about" exact component={About} />
+          <Route path="/myconnections" exact component={MyConnections} />
           <Route path="/" exact component={Home} />
         </div>
       </Router>

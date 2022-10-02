@@ -21,7 +21,7 @@ export default function Reducer(state = initialState, action) {
     case "LOG_OUT":
       return {
         ...state,
-        connections:[],
+        connections: [],
         user: {},
         status: false,
       };
@@ -33,7 +33,14 @@ export default function Reducer(state = initialState, action) {
         state.connections.push(action.payload);
       }
       return state;
-      
+    case "REMOVE":
+      console.log(action);
+      var newArray = state.connections.filter(function (el) {
+        return el.id !== action.payload;
+      });
+      console.log(newArray);
+      return { ...state, connections: newArray };
+
     default:
       return state;
   }

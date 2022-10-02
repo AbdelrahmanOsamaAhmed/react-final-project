@@ -2,7 +2,7 @@ import NavLink from "../link/NavLink";
 
 export default function SignUp() {
   return (
-    <div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="m-auto bg-grey-lighter min-h-screen flex flex-col">
       <div class=" max-w-lg mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
           <h1 class="mb-8 text-3xl text-center">Sign up</h1>

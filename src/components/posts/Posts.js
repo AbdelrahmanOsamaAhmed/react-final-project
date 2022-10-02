@@ -90,13 +90,13 @@ const Post = () => {
               </div>
             </div>
 
-            <button type="button" onClick={increment} className="btn">
+            <button type="button" onClick={increment} className=" btnn btn1">
               LIKE
             </button>
-            <button type="button" onClick={increment} className="btn2">
+            <button type="button" onClick={increment} className=" btnn btn2">
               Love
             </button>
-            <button type="button" onClick={increment} className="btn3">
+            <button type="button" onClick={increment} className=" btnn btn3">
               Dis Like
             </button>
             <p>

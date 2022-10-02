@@ -23,3 +23,10 @@ export function addtoconnect(user) {
     payload: user,
   };
 }
+
+export function removeConnection(id) {
+  return {
+    type: "REMOVE",
+    payload: id,
+  };
+}
