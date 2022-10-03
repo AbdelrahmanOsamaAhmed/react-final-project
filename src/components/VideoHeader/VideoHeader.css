@@ -1,0 +1,12 @@
+.video_header{
+    display: flex;justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;color: white;padding: 0px 40px;box-sizing: border-box;font-size: 25px;
+    font-family: cursive;
+}
+
+.video_header > .cameraAltIcon{
+    font-size: 30px;
+}
+
